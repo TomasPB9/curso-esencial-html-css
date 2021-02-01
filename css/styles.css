@@ -1,3 +1,4 @@
+/* importar fuentes de que tenemos guardadas de forma local */
 @font-face{
   font-family: charter;
   src: url('../fonts/charter-regular.otf');
@@ -35,7 +36,8 @@
 
 body{
   color: var(--gray30);
-  font-family:charter;
+  font-family: 'Roboto', sans-serif;
+  /* font-family:charter; */
 }
 
 a{
@@ -76,4 +78,26 @@ h3{
   /* font-size: 24px; */
   /* porque 24px/16px=1.5em */
   font-size: 1.5em;
+}
+
+pre{
+  background: #FEC62E;
+}
+
+.hero{
+  /* degrada la imagen de abajo hacia arriba, el color de abajo lo pone blanco (255,255,255) con alfa(transparencia de 0.3)
+  y el color que espera arriba lo pone transparente */
+  background:linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png');
+  /* no repite la imagen para llebar el espacio del background definido */
+  /* background-repeat: no-repeat; */
+
+  /* posiciona la imagen que definimos en el fondo del centro de las dimensiones que definimos */
+  /* background-position: center; */
+
+  /* hace que la imagen se expanda sin multipicarse */
+  /* background-size: cover; */
+
+  /* background-position: left top; => posiciona la imagen en la parte superior izquierda*/
+  /* background-position: left 50px top 50px; => parte superior izq y la recorre 50px y 50px para abajo */
+  height: 350px;
 }
