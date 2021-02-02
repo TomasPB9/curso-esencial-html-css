@@ -101,3 +101,30 @@ pre{
   /* background-position: left 50px top 50px; => parte superior izq y la recorre 50px y 50px para abajo */
   height: 350px;
 }
+
+.section-content{
+  counter-reset: titleList;
+}
+
+.section-content h3{
+  counter-increment: titleList;
+}
+
+  .section-content h3::before{
+  /*  */
+  content:" - "counter(titleList,decimal) " . ";/* o upper-roman para que los ponga con números romanos */
+}
+
+  .section-content h3::after{
+  /* siempre debe de ir content aunque sea vacío */
+content: '';
+width: 32px;
+height: 4px;
+background:var(--gray30);
+display: block;
+}
+
+/* cuando seleccionas sobre el documento se sombrea de color azul */
+/* ::selection{
+  background: blue;
+} */

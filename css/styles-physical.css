@@ -1,0 +1,176 @@
+/* importar fuentes de que tenemos guardadas de forma local */
+@font-face{
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face{
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face{
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face{
+  font-family: charter;
+  src: url('../fonts/charter-bold-italic.otf');
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* root al ponerlo como pseudo clase tiene un peso mayor que html */
+/* por lo que renderiza 18px en todo el documento */
+:root{
+  font-size: 18px;
+  /* declaro variable con nombre de colorcito */
+  --gray30 :#212121;
+  --gray20:#212429;
+  --gray10:#616161;
+}
+
+body{
+  color: var(--gray30);
+  font-family: 'Roboto', sans-serif;
+  /* font-family:charter; */
+  margin: 0;
+}
+
+a{
+  color: var(--gray30) ;
+}
+
+header{
+  /* modificar ese color solo en esta area y no afecta a las demás del color que se desclaro */
+  /* --gray:10:red; */
+  font-size: 14px;
+  color: var(--gray10);
+}
+
+header a{
+  color:var(--gray10);
+  text-decoration: none;
+}
+
+header a:hover{
+  color: var(--gray30);
+}
+
+nav details summary{
+  font-weight: bold;
+}
+
+h1{
+  font-size: 60px;
+  /* margin:top right bottom left; */
+  /* margin: top/botttom right/left */
+  margin:64px 10px 16px 10px;
+}
+
+h1~p{
+  margin-bottom:64px ;
+}
+
+hr{
+  /* background: red; */
+  margin:64px 0 ;
+}
+
+h2{
+  /* 16px=1em; */
+  /* porque 32px/16px=2em */
+  font-size: 2em;
+  margin: 64px 0 40px;
+  font-weight: normal;
+}
+
+h3{
+  /* font-size: 24px; */
+  /* porque 24px/16px=1.5em */
+  font-size: 1.5em;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-weight: normal;
+}
+
+pre{
+  background: #FEC62E;
+}
+
+blockquote{
+  margin: 32px 0;
+}
+
+.hero{
+  /* degrada la imagen de abajo hacia arriba, el color de abajo lo pone blanco (255,255,255) con alfa(transparencia de 0.3)
+  y el color que espera arriba lo pone transparente */
+  background:linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png');
+  /* no repite la imagen para llebar el espacio del background definido */
+  /* background-repeat: no-repeat; */
+
+  /* posiciona la imagen que definimos en el fondo del centro de las dimensiones que definimos */
+  /* background-position: center; */
+
+  /* hace que la imagen se expanda sin multipicarse */
+  /* background-size: cover; */
+
+  /* background-position: left top; => posiciona la imagen en la parte superior izquierda*/
+  /* background-position: left 50px top 50px; => parte superior izq y la recorre 50px y 50px para abajo */
+  height: 350px;
+}
+
+.section-content:first-of-type{
+  background: red;
+  margin: 0;
+}
+
+.section-content{
+  margin-top: 164px;
+}
+
+.section-content ol li{
+  line-height: 24px;
+}
+.section-content ul li{
+  margin-bottom: 16px;
+}
+
+.section-content+hr{
+  display: none;
+}
+
+.section-content img{
+  margin-top: 40px;
+}
+
+.section-content{
+  counter-reset: titleList;
+}
+
+.section-content h3{
+  counter-increment: titleList;
+}
+
+  .section-content h3::before{
+  /*  */
+  content:" - "counter(titleList,decimal) " . ";/* o upper-roman para que los ponga con números romanos */
+}
+
+  .section-content h3::after{
+  /* siempre debe de ir content aunque sea vacío */
+content: '';
+width: 32px;
+height: 4px;
+background:var(--gray30);
+display: block;
+}
+
+/* cuando seleccionas sobre el documento se sombrea de color azul */
+/* ::selection{
+  background: blue;
+} */
