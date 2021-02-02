@@ -98,10 +98,6 @@ h3{
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
-  width: 200px;
-  padding: 20px;
-  border: 1px solid red;
-  box-sizing: border-box;
 }
 
 pre{
@@ -130,6 +126,22 @@ blockquote span{
 
 blockquote span::before{
   content: " - ";
+}
+
+/* tecnica del wrapper para arquitectutra escalable */
+.main{
+  border: 1px solid red;
+  background:linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png');
+}
+
+.wrapper{
+  width: 902px;
+  margin:auto;
+}
+
+.main-content{
+  background:white;
+  padding: 20px;
 }
 
 .debug{
