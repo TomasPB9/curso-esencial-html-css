@@ -69,12 +69,17 @@ h1{
   font-size: 60px;
   /* margin:top right bottom left; */
   /* margin: top/botttom right/left */
-  margin:64px 10px 16px 10px;
+  margin-top: 64px;
+  margin-bottom: 16px;
+  border: 10px solid red;
+  width: 400px;
+  height: 400px;
+  padding: 40px;
 }
 
-h1~p{
+/* h1~p{
   margin-bottom:64px ;
-}
+} */
 
 hr{
   /* background: red; */
@@ -96,14 +101,35 @@ h3{
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
+  box-sizing: border-box;
 }
 
 pre{
   background: #FEC62E;
+  padding: 40px;
+  font-family: 'Roboto';
+  line-height: 24px;
 }
 
 blockquote{
+  font-size: 24px;
   margin: 32px 0;
+  padding-left: 16px;
+  line-height: 24px;
+  /* border: 1px solid red; */
+  /* border-top:1px solid pink; */
+  /* border-top-color:aqua */
+  /* border-top-style: dashed; */
+  /* border-radius: 50px 100px 10px 0; => redondea las esquinas de esq.sup.izq. y sigue en sentido de manecillas del reloj*/
+  border-left:4px solid var(--gray30);
+}
+
+blockquote span{
+  color:var(--gray10)
+}
+
+blockquote span::before{
+  content: " - ";
 }
 
 .hero{
@@ -125,7 +151,7 @@ blockquote{
 }
 
 .section-content:first-of-type{
-  background: red;
+  /* background: red; */
   margin: 0;
 }
 
@@ -154,11 +180,13 @@ blockquote{
 
 .section-content h3{
   counter-increment: titleList;
+  /* background: red; */
+  padding-bottom: 4px;
 }
 
   .section-content h3::before{
   /*  */
-  content:" - "counter(titleList,decimal) " . ";/* o upper-roman para que los ponga con números romanos */
+  content:counter(titleList,decimal) " . ";/* o upper-roman para que los ponga con números romanos */
 }
 
   .section-content h3::after{
