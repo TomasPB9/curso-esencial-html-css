@@ -50,6 +50,40 @@ header{
   /* --gray:10:red; */
   font-size: 14px;
   color: var(--gray10);
+  /* position:relative => tiene 5 propiedad (top,left,bottom,right,z-index) */
+  /* sirve para mover el elemento sin que el lugar fisico en cual esta ubicado se altere */
+  /* el espacio que ocupaba ese elemento no se altera, ahi se queda */
+  /* z-index sirve para poner elementos encima de otros (z-index:-1; => lo pone atras de otro elemento) */
+  /* position: relative; */
+  /* top: 200px; */
+  /* right: 50px; */
+  /* bottom: 100px; */
+  /* z-index: -1;  => lo pone atras de los elementos*/
+  /* z-index: 1;  => lo pone adelante de los elementos*/
+
+  /* position absolute => el elemento se ubica en el espacion que le tocaba en el DOM y se encima con el resto de elementos  */
+  /* maneja 4 propiedades (left,top,right,bottom) */
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* right: 0; */
+  /* lo manda hasta arriba */
+  /* top: 0; */
+
+  /* position:fixed; => persigue si hacemos scroll en el website tiene 5 propiedades (top,left,bottom,right,z-index) */
+  /* position: fixed; */
+  /* left: 0; */
+  /* z-index: 1  => lo pone adelante de los elementos;*/
+
+  /* position: sticky; =>ocupa todo el ancho y nos persigue pero necesitamos ponerle un valor a top
+  en este caso 0, y cuando scrolleamos se pega arriba y nos persigue*/
+  position: sticky;
+  top: 0;
+
+  border: 1px solid red;
+  /* position: absolute;
+  position: fixed;
+  position: sticky; */
+
 }
 
 header a{
@@ -98,6 +132,10 @@ h3{
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
+  /* postiton para que nos persiguan los titulos h3 y cambie al titulo nuevo cada vez que llegue al otro h3 */
+  position: sticky;
+  top: 0;
+  background: white;
 }
 
 pre{
@@ -130,7 +168,7 @@ blockquote span::before{
 
 /* tecnica del wrapper para arquitectutra escalable */
 .main{
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background:linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png');
 }
 
@@ -143,6 +181,20 @@ blockquote span::before{
   background:white;
   padding: 20px;
 }
+
+/* ejemplo tecnica del wrapper (para tener background diferente en cada seccion) */
+.title{
+  background: red;
+}
+
+.subtitle{
+  background: blue;
+}
+
+.services{
+  background: pink;
+}
+
 
 .debug{
   /* se puede usar cualquiera de las 3 opciones para identificar el elemento a debugear */
@@ -176,6 +228,9 @@ blockquote span::before{
 
 .section-content{
   margin-top: 164px;
+  /* se pone position:relative => para poder mover el elemento que tiene position:absolute en sus 4 coordenadas
+  dentro de su contenedor que lo envuelve */
+  position: relative;
 }
 
 .section-content ol li{
