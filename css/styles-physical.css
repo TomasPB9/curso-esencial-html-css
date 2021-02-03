@@ -34,6 +34,10 @@
   --gray10:#616161;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   color: var(--gray30);
   font-family: 'Roboto', sans-serif;
@@ -49,6 +53,7 @@ header{
   /* modificar ese color solo en esta area y no afecta a las demás del color que se desclaro */
   /* --gray:10:red; */
   font-size: 14px;
+  width: 188px;
   color: var(--gray10);
   /* position:relative => tiene 5 propiedad (top,left,bottom,right,z-index) */
   /* sirve para mover el elemento sin que el lugar fisico en cual esta ubicado se altere */
@@ -76,10 +81,10 @@ header{
 
   /* position: sticky; =>ocupa todo el ancho y nos persigue pero necesitamos ponerle un valor a top
   en este caso 0, y cuando scrolleamos se pega arriba y nos persigue*/
-  position: sticky;
-  top: 0;
-
-  border: 1px solid red;
+  position: absolute;
+  top: 64px;
+  left: -210px;
+  z-index: 1;
   /* position: absolute;
   position: fixed;
   position: sticky; */
@@ -97,6 +102,11 @@ header a:hover{
 
 nav details summary{
   font-weight: bold;
+  line-height: 24px;
+}
+
+header li{
+  margin-bottom: 16px;
 }
 
 h1{
@@ -105,6 +115,7 @@ h1{
   /* margin: top/botttom right/left */
   margin-top: 64px;
   margin-bottom: 16px;
+  font-weight: normal;
   /* border: 10px solid red;  */
 }
 
@@ -166,10 +177,19 @@ blockquote span::before{
   content: " - ";
 }
 
+.header{
+  position: sticky;
+  top: 0;
+}
+
+.header-content{
+  position: relative;
+}
+
 /* tecnica del wrapper para arquitectutra escalable */
 .main{
   /* border: 1px solid red; */
-  background:linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png');
+  /* background:linear-gradient(to top, rgba(255,255,255,0.3),transparent), url('../images/pattern.png'); */
 }
 
 .wrapper{
@@ -179,7 +199,6 @@ blockquote span::before{
 
 .main-content{
   background:white;
-  padding: 20px;
 }
 
 /* ejemplo tecnica del wrapper (para tener background diferente en cada seccion) */
@@ -255,7 +274,7 @@ blockquote span::before{
 .section-content h3{
   counter-increment: titleList;
   /* background: red; */
-  padding-bottom: 4px;
+  padding-bottom: 8px;
 }
 
   .section-content h3::before{
@@ -266,10 +285,12 @@ blockquote span::before{
   .section-content h3::after{
   /* siempre debe de ir content aunque sea vacío */
 content: '';
-width: 32px;
+width: 80px;
 height: 4px;
 background:var(--gray30);
-display: block;
+position: absolute;
+left: 0;
+bottom: 0;
 }
 
 /* cuando seleccionas sobre el documento se sombrea de color azul */
