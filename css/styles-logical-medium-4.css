@@ -55,15 +55,39 @@ a{
   color: var(--white30) ;
 }
 
+.header{
+  /* position: sticky; */
+  /* inset-block-start: -45px; */
+}
+
+.header-content{
+  padding-inline: 20px;
+  /* position: relative; */
+  /* inset-block-start:65px; */
+
+}
+
 header{
+  margin-block-start: 20px;
   /* modificar ese color solo en esta area y no afecta a las demás del color que se desclaro */
   /* --white:10:red; */
   font-size: 14px;
   color: var(--white);
+  /* position: absolute; */
+  /* top */
+  /* inset-block-start:0px; */
+  /* bottom */
+  /* inset-block-end: ; */
+  /* left */
+  /* inset-inline-start: -208px; */
+  /* right */
+  /* inset-inline-end: ; */
+  /* inline-size: 188px; */
 }
 
 header li{
   color: var(--white20);
+  margin-block-end: 16px;
 }
 
 header a{
@@ -84,9 +108,15 @@ h1,h2,h3{
 }
 
 h1{
-  font-size: 60px;
-  margin-block-start: 64px;
+  /* font-size: 60px; */
+  font-size: 40px;
+  margin-block-start: 20px;
   margin-block-end: 16px;
+
+  /* alinear textos con valores logicos */
+  /* text-align: start; */
+  /* text-align: end; */
+  /* text-align: justify; */
 }
 
 h2{
@@ -114,6 +144,22 @@ pre{
   padding:40px;
   overflow: auto;
   border-radius: 8px;
+  border: 1px solid red;
+  /* propiedades logicas en los bordes */
+  border-inline-start: 5px solid blue;
+  border-inline-end: 5px solid blueviolet;
+  border-block-start: 5px solid orange;
+  border-block-end: 5px solid red;
+  border: 10px solid #5551FF;
+  box-shadow: -10px 10px 0 0 #ABAAF6;
+  margin-block-end: 30px;
+
+  /* hace circulo */
+  /* border-radius: 50%; */
+  /* inline-size: 400px; */
+  /* block-size: 400px; */
+
+  /* border-start-start-radius: 60px; => todavia no lo soporta el navegador */
 }
 
 p{
@@ -135,7 +181,7 @@ p{
 
   /* background-position: left top; => posiciona la imagen en la parte superior izquierda*/
   /* background-position: left 50px top 50px; => parte superior izq y la recorre 50px y 50px para abajo */
-  height: 350px;
+  block-size: 50px;
 }
 
 .section-content img{
@@ -223,4 +269,116 @@ blockquote p{
 .main-content{
   /* border: 1px solid blue; */
   padding-inline: 16px;
+}
+
+.slider{
+  /* border: 1px solid red; */
+}
+
+.slider-container{
+  /* border: 1px solid purple; */
+  /* block-size: 100px; */
+  display: block;
+  overflow: auto;
+  scroll-behavior: smooth;
+  /* white-space: nowrap; => si encuentra una frontera(limite) en lugar de mandar ese elemento para abajo  con esta propiedad
+  (white-space)no lo manda a la siguiente linea y teniendo el overflow provoca que no se desborde y exista el desplazamiento  */
+  white-space: nowrap;
+  /* para que no exista el espacio para separar elementos que el navegador pone por default ponemos => font-size: 0;*/
+  font-size: 0;
+}
+
+.video{
+  margin: 0;
+  /* border: 1px solid blue; */
+  /* con display:inset-block: ;
+  permite teener un elemento a la de otro elemento y tambien tienen la posibilidad de tener width, height, padding */
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  /* proporcion en la que normalmente estan los videoss */
+  aspect-ratio: 16/9;
+}
+
+.slider-bullet-list{
+  /* border: 1px solid red; */
+  text-align: center;
+  margin-block-start: 10px;
+}
+
+.slider-bullet{
+  display: inline-block;
+  inline-size: 15px;
+  block-size: 15px;
+  background: white;
+  border-radius: 50%;
+}
+
+.form input{
+  inline-size: 100%;
+  border: 1px solid var(--white30);
+  background:  #251F24;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding-inline: 16px;
+  padding-block:12px ;
+  color:var(--white30);
+  font-size: 16px;
+  display: block;
+  margin-block-end: 24px;
+}
+
+/* Para cambiar el color del texto que contiene placeholderm  */
+.form input::-webkit-input-placeholder{
+  color: var(--white20);
+}
+
+/* selector de atributos (solo afecta los elementos que tengan ese atributo) */
+.form input[type="submit"]{
+  background:#157EFB;
+  border: none;
+}
+
+/* RESPONSIVE DESIGN (media queries) */
+/* @media print() => afecta impresion */
+/* @media all() => afecta todos los dispositivos */
+/* @media screen() => afecta solo la pantalla */
+@media screen and (min-width:1366px){
+  .hero{
+    block-size: 350px;
+  }
+
+  .header{
+    position: sticky;
+    inset-block-start: -45px;
+  }
+
+  .header-content{
+    position: relative;
+    inset-block-start:65px;
+    padding-inline: 0;
+
+  }
+
+  header{
+    /* modificar ese color solo en esta area y no afecta a las demás del color que se desclaro */
+    /* --white:10:red; */
+    font-size: 14px;
+    color: var(--white);
+    position: absolute;
+    /* top */
+    inset-block-start:0px;
+    /* bottom */
+    /* inset-block-end: ; */
+    /* left */
+    inset-inline-start: -208px;
+    /* right */
+    /* inset-inline-end: ; */
+    inline-size: 188px;
+  }
+
+  h1{
+    font-size: 60px;
+    margin-block-start: 64px;
+  }
 }

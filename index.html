@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/styles-physical.css">
+  <link rel="stylesheet" href="./css/styles-logical-medium-4.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"
+  rel="stylesheet">
   <title>El blog de Bolio</title>
 </head>
 <body>
@@ -146,7 +147,7 @@
           <h2>
             Setup
           </h2>
-          <img src="images/google-chrome.png" alt="Logo de Google Chrome" title="Logo de Google Chrome">
+          <img src="images-dark/google-chrome.png" alt="Logo de Google Chrome" title="Logo de Google Chrome">
           <h3 id="google-chrome">
             Google Chrome
           </h3>
@@ -155,19 +156,19 @@
             herramientas de
             desarrollo avanzadas y de amigable uso.
           </p>
-          <img src="images/visual-studio-code.png" alt="Logo de Visual Studio Code" title="Logo de Visual Studio Code">
+          <img src="images-dark/visual-studio-code.png" alt="Logo de Visual Studio Code" title="Logo de Visual Studio Code">
           <h3 id="vsc">Visual Studio Code</h3>
           <p>Visual Studio Code es el editor de texto más popular y potente del mercado actualmente, su fácil uso y la
             capacidad de
             extenderlo por medio de plugins lo hace el complemento perfecto para cualquier programador sin importar el
             lenguaje en
             el que se desemvuelva.</p>
-          <img src="images/figma.png" alt="Logo de Figma" title="Logo de Figma">
+          <img src="images-dark/figma.png" alt="Logo de Figma" title="Logo de Figma">
           <h3 id="figma">Figma</h3>
           <p>Figma es una la herramienta más popular en la actualidad para entregar diseños a los desarrolladores para
             su
             implementación por su fácil uso porque puede ser usado directamente desde el navegador.</p>
-          <img src="images/github.png" alt="Logo de GitHub" title="Logo de GitHub">
+          <img src="images-dark/github.png" alt="Logo de GitHub" title="Logo de GitHub">
           <h3 id="github">GitHub</h3>
           <p>Así como en Facebook te encuentran tus amigos, en Github te encuentran otras programadoras y programadores
             de todo el
@@ -280,12 +281,56 @@
           </ul>
           <a href="https://leonidasesteban.com" target="_blank">Página web de Leo</a>
         </section>
+        <!-- slider con HTML y CSS -->
+        <div class="section-content">
+          <h2>HOLA ESTOS SON VIDEOS
+            <div class="slider">
+              <scroll-container class="slider-container">
+                <!-- id => para hacer la navegacion interna con las anclas <a href="#nombreID"> -->
+                <scroll-page class="slider-slide" id="video-1">
+                  <iframe  class="video" width="560" height="315" src="https://www.youtube.com/embed/wTpuKOhGfJE" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </scroll-page>
+                <scroll-page class="slider-slide" id="video-2">
+                  <iframe  class="video" width="560" height="315" src="https://www.youtube.com/embed/EORCZ2imaQo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </scroll-page>
+                <scroll-page class="slider-slide" id="video-3">
+                  <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/wTpuKOhGfJE" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </scroll-page>
+              </scroll-container>
+              <div class="slider-bullet-list">
+                <a href="#video-1" class="slider-bullet"></a>
+                <a href="#video-2" class="slider-bullet"></a>
+                <a href="#video-3" class="slider-bullet"></a>
+              </div>
+            </div>
+          </h2>
+        </div>
         <p>
           Si tienes alguna pregunta escríbeme a
           <!-- Abre herramienta de email mas cercana para mandar correo -->
           <a href="mailto:tomas_9724@hotmail.com">tomas_9724@hotmail.com</a>
         </p>
-
+        <!-- desarrollo del formulario -->
+        <div class="section-content">
+          <h2>Ingresea a nuestro newsletter</h2>
+          <form action="#" class="form">
+            <!-- <select name="" id="">  desplega varias opciones
+              <option value="">curso 1</option>
+              <option value="">curso 2</option>
+            </select> -->
+            <!-- <input type="checkbox" name="" id="">  casilla verificador -->
+            <!-- <input type="radio">  radio button -->
+            <input type="text" required placeholder="Nombre">
+            <input type="email" required placeholder="Correo Electrónico">
+            <input type="submit" value="Suscribirme">
+          </form>
+        </div>
         <!-- código para cerrar listas si se abre otra -->
         <script>
           const $detailsList = document.querySelectorAll('details')
