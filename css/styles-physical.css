@@ -267,6 +267,7 @@ blockquote span::before{
   margin-top: 40px;
 }
 
+/*  */
 .section-content{
   counter-reset: titleList;
 }
